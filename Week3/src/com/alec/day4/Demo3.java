@@ -14,7 +14,6 @@ public class Demo3 {
         colors.add("blue");
         colors.add("pink");
 
-        // before sorting
         System.out.println("before sorting...");
         for(String color: colors){
             System.out.println(color);
@@ -22,14 +21,12 @@ public class Demo3 {
 
 
 
-        // after sorting
         System.out.println("after sorting...");
         Collections.sort(colors);
         for(String color: colors){
             System.out.println(color);
         }
 
-        // List of numbers
         ArrayList<Integer> numbers = new ArrayList<>();
         numbers.add(8);
         numbers.add(2);
@@ -37,13 +34,11 @@ public class Demo3 {
         numbers.add(5);
         numbers.add(6);
 
-        // before sort
         System.out.println("before sorting...");
         for(int number: numbers){
             System.out.println(number);
         }
 
-        // after sort
         Collections.sort(numbers);
         System.out.println("after sorting...");
         for(int number: numbers){

@@ -11,14 +11,12 @@ public class Demo4 {
         names.add("Stacy");
         names.add("Watson");
 
-        //System.out.println(names.size());
-        // for
+
         for(int i=0; i<names.size();i++){
             System.out.println(names.get(i));
         }
 
 
-        // forEach
         names.forEach(name -> {
             System.out.println(name);
         });

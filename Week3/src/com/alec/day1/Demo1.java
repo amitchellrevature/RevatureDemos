@@ -2,13 +2,12 @@ package com.alec.day1;
 
 public class Demo1 {
 
-    static int z =100;  // static variable
-    int x = 10;  // instance variable
+    static int z =100;
+    int x = 10;
 
 
     public void addNumber(){
-        //static int d = 10;  not allowed
-        int a = 10; // local variable
+        int a = 10;
         int b = 20;
         System.out.println(a + b);
     }

@@ -1,15 +1,5 @@
 package com.alec.day1;
 
-// simple inheritance
-//class A{
-//
-//}
-//
-//class B extends  A{
-//
-//}
-
-// multilevel inheritance
 class A{
     public void test1(){
         System.out.println("A");

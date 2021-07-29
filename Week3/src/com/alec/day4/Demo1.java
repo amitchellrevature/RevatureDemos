@@ -15,9 +15,8 @@ public class Demo1 {
 
         // iterator
         Iterator iterator = mList.iterator();
-        // hasNext() will check if iterator has the element
         while (iterator.hasNext()){
-            System.out.println(iterator.next());  // print the element and move the cursor to the next
+            System.out.println(iterator.next());
         }
 
         // foreach

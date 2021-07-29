@@ -16,7 +16,6 @@ public class Demo15 {
         Set set = map.entrySet();
         Iterator iterator = set.iterator();
         while (iterator.hasNext()){
-            // converting to map.Entry so that we can get key and value separately
             Map.Entry entry = (Map.Entry)iterator.next();
             System.out.println(entry.getKey() +" : "+ entry.getValue());
         }

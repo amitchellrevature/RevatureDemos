@@ -12,9 +12,8 @@ public class Demo2 {
         names.add("Watson");
 
 
-        // get
-        System.out.println(names.get(1));  // paul
-        // set
+        System.out.println(names.get(1));
+
         names.set(1, "Paul Smith");
         for(String name: names){
             System.out.println(name);

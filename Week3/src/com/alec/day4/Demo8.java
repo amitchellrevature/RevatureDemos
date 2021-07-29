@@ -11,11 +11,9 @@ public class Demo8 {
         names.add("Watson");
         System.out.println(names);
 
-        // adding element at specified position
         names.add(0, "John");
         System.out.println(names);
 
-        // adding second list
         LinkedList<String> namesNew = new LinkedList<>();
         namesNew.add("Stacy");
         namesNew.add("Smith");
@@ -26,12 +24,10 @@ public class Demo8 {
         names.addAll(0, namesNew);
         System.out.println(names);
 
-        // addFirst()
         names.addFirst("First");
         System.out.println(names);
 
 
-        // addLast()
         names.addLast("Last");
         System.out.println(names);
 

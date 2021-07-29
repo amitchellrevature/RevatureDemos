@@ -5,7 +5,6 @@ public class Demo14 {
         for(int i=1;i<=10;i++){
             if(i==5){
                 continue;
-                // will skip the rest statement
             }
             System.out.println(i);
         }
