@@ -5,45 +5,40 @@ public class Calculator {
     public static void main(String[] args) {
         int option;
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Select a tool:\n" +
-                "1 - Basic Calculator\n" +
-                "2 - EMI Calculator");
+        System.out.println("""
+                Select a tool:
+                1 - Basic Calculator
+                2 - EMI Calculator""");
         option = scanner.nextInt();
         if (option == 1){
             calculate(scanner);
-        } else { emi(scanner); };
+        } else { emi(scanner); }
     }
 
     private static void calculate(Scanner scanner){
         double num1, num2;
         int option;
-        while(true) {
+        do {
             System.out.println("Enter First Number");
             num1 = scanner.nextDouble();
             System.out.println("Enter Second Number");
             num2 = scanner.nextDouble();
-            System.out.println("Select Option:\n" +
-                    "1 - Add\n" +
-                    "2 - Subtract\n" +
-                    "3 - Multiply\n" +
-                    "4 - Divide");
+            System.out.println("""
+                    Select Option:
+                    1 - Add
+                    2 - Subtract
+                    3 - Multiply
+                    4 - Divide""");
             option = scanner.nextInt();
-            switch (option) {
-                case 1:
-                    num1 = num1 + num2;
-                    break;
-                case 2:
-                    num1 = num1 - num2;
-                    break;
-                case 3:
-                    num1 = num1 * num2;
-                    break;
-                case 4:
-                    num1 = num1 / num2;
-                    break;
-            }
+            num1 = switch (option) {
+                case 1 -> num1 + num2;
+                case 2 -> num1 - num2;
+                case 3 -> num1 * num2;
+                case 4 -> num1 / num2;
+                default -> num1;
+            };
             System.out.println("Result: " + num1);
-        }
+        } while (true);
     }
 
     private static void emi(Scanner scanner){
