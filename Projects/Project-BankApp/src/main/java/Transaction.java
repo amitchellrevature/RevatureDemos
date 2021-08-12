@@ -1,7 +1,7 @@
 package main.java;
 
 public class Transaction {
-    private int id;
+    private int id = 0;
     private double balance;
     private String firstName, lastName;
 
@@ -35,7 +35,7 @@ public class Transaction {
         return balance;
     }
 
-    public void setBalance(int name) {
+    public void setBalance(double balance) {
         this.balance = balance;
     }
 

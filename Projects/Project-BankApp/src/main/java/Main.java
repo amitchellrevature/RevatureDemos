@@ -9,6 +9,9 @@ public class Main {
     public static void main(String[] args) throws SQLException {
         TransactionDAO dao = new TransactionDAO();
         Scanner scanner = new Scanner(System.in);
+        System.out.println("-----------\n" +
+                "| Welcome |\n" +
+                "-----------\n");
         home(scanner, dao);
     }
 
@@ -25,16 +28,17 @@ public class Main {
 
             switch (input) {
                 case 1: {
-                    System.out.print("Enter First Name: ");
+                    System.out.print("\nEnter First Name: ");
                     String firstName = scanner.next();
                     System.out.print("Enter Last Name: ");
                     String lastName = scanner.next();
                     Transaction transaction = dao.login(firstName, lastName);
-                    customer(scanner, transaction, dao);
+                    if (transaction.getId() != 0)
+                        customer(scanner, transaction, dao);
                     break;
                 }
                 case 2: {
-                    System.out.print("Enter First Name: ");
+                    System.out.print("\nEnter First Name: ");
                     String firstName = scanner.next();
                     System.out.print("Enter Last Name: ");
                     String lastName = scanner.next();
@@ -43,7 +47,7 @@ public class Main {
                     break;
                 }
                 case 3: {
-                    System.out.print("Enter First Name: ");
+                    System.out.print("\nEnter First Name: ");
                     String firstName = scanner.next();
                     System.out.print("Enter Last Name: ");
                     String lastName = scanner.next();
@@ -62,7 +66,7 @@ public class Main {
     public static void customer (Scanner scanner, Transaction transaction, TransactionDAO dao) throws SQLException {
         boolean flag = true;
         while(flag) {
-            System.out.println("Welcome\n" +
+            System.out.println("\nWelcome\n" +
                     "Select from the options below:\n" +
                     "1 - View Balance\n" +
                     "2 - Make a deposit\n" +
@@ -108,10 +112,10 @@ public class Main {
                     int option;
                     double amount = dao.transfer(transaction);
                     while(amount > -1) {
-                        System.out.println("Accept this transfer?" +
-                                "1 - Yes" +
-                                "2 - No" +
-                                "3 - Exit");
+                        System.out.println("Accept this transfer?\n" +
+                                "1 - Yes\n" +
+                                "2 - No\n" +
+                                "3 - Exit\n");
                         option = scanner.nextInt();
                         if (option == 1){
                             dao.acceptTransfer(transaction, true, amount);
@@ -134,10 +138,10 @@ public class Main {
     public static void employee (Scanner scanner, TransactionDAO dao) throws SQLException {
         boolean flag = true;
         while(flag) {
-            System.out.println("Welcome\n" +
+            System.out.println("\nWelcome\n" +
                     "Select from the options below:\n" +
                     "1 - Approve or reject an account\n" +
-                    "2 - View an account's details\n" +
+                    "2 - View accounts' details\n" +
                     "3 - View transaction logs\n" +
                     "4 - Exit");
             int input = scanner.nextInt();

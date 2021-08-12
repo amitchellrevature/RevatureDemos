@@ -51,25 +51,37 @@ public class TransactionDAO {
     }
 
     public void deposit(Transaction transaction, double amount) throws SQLException {
+        if(amount < 0){
+            System.out.println("Error, invalid amount for deposit");
+            return;
+        }
         String sql = "update account set balance = ? where id = ?";
         PreparedStatement preparedStatement = connection.prepareStatement(sql);
         preparedStatement.setDouble(1, (transaction.getBalance() + amount));
         preparedStatement.setInt(2, transaction.getId());
         int count = preparedStatement.executeUpdate();
-        if (count > 0)
+        if (count > 0) {
             System.out.println("Deposit successful");
+            transaction.setBalance(transaction.getBalance() + amount);
+        }
         else
             System.out.println("Error, deposit not executed");
     }
 
     public void withdraw(Transaction transaction, double amount) throws SQLException {
+        if(amount < 0 || amount > transaction.getBalance()){
+            System.out.println("Error, invalid amount for withdrawal");
+            return;
+        }
         String sql = "update account set balance = ? where id = ?";
         PreparedStatement preparedStatement = connection.prepareStatement(sql);
         preparedStatement.setDouble(1, (transaction.getBalance() - amount));
         preparedStatement.setInt(2, transaction.getId());
         int count = preparedStatement.executeUpdate();
-        if (count > 0)
-            System.out.println("Withdraw successful");
+        if (count > 0) {
+            System.out.println("Withdrawal successful");
+            transaction.setBalance(transaction.getBalance() - amount);
+        }
         else
             System.out.println("Error, deposit not executed");
     }
@@ -96,7 +108,7 @@ public class TransactionDAO {
     }
 
     public void acceptTransfer(Transaction transaction, boolean accept, double amount) throws SQLException {
-        if (accept == true){
+        if (accept){
             String sql = "update account set approved = 1 where id = ?";
             Statement statement = connection.createStatement();
             ResultSet resultSet = statement.executeQuery(sql);
@@ -120,7 +132,7 @@ public class TransactionDAO {
     }
 
     public boolean verify(String firstName, String lastName) throws SQLException {
-        String sql = "select * from account where firstName = '" + firstName + "' and lastName = '" + lastName;
+        String sql = "select * from account where firstName = '" + firstName + "' and lastName = '" + lastName + "'";
         Statement statement = connection.createStatement();
         ResultSet resultSet = statement.executeQuery(sql);
         if (resultSet.next()) {
