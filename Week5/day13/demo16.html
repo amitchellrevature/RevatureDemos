@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1 id="myName"></h1>
+
+    <h1 id="myName2"></h1>
+
+    <script>
+        var firstName = localStorage.getItem('firstName');
+        var lastName = localStorage.lastName;
+
+        document.getElementById('myName').innerHTML = firstName + ' ' + lastName;
+
+        //localStorage.clear()
+        localStorage.removeItem('lastName');
+
+        var firstName2 = localStorage.getItem('firstName');
+        var lastName2 = localStorage.lastName;
+
+        document.getElementById('myName').innerHTML = firstName2 + ' ' + lastName2;
+
+
+    </script>
+
+</body>
+</html>
