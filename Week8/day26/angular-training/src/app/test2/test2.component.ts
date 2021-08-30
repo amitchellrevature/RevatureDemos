@@ -10,10 +10,8 @@ export class Test2Component implements OnChanges {
   @Input()
   childData = '';
   
-  ngOnChanges(): void{
-
+  ngOnChanges(){
   }
-  
 
   constructor() { }
 
