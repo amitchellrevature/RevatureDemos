@@ -1,0 +1,39 @@
+<h1>Structural Directives - ngFor</h1>
+<!-- 
+<ul>
+    <li>{{ names[0] }}</li>
+    <li>{{ names[1] }}</li>
+    <li>{{ names[2] }}</li>
+</ul>
+ -->
+
+
+ <!-- <ul>
+     <li *ngFor="let name of names">{{ name }}</li>
+ </ul> -->
+
+ <h1>Employee List</h1>
+
+  <!-- table.table.table-bordered>thead>tr>td*4    PRESS TAB or Enter -->
+
+ <table class="table table-borederd">
+     <thead>
+         <tr>
+            <th>#</th>
+             <th>Id</th>
+             <th>Name</th>
+             <th>Gender</th>
+             <th>Email</th>
+         </tr>
+     </thead>
+     <tbody>
+         <tr *ngFor="let employee of employees; index as i; first as f; last as l; even as e; odd as o"
+         [style.background]="e ? '#ccc' : '#fff'">
+             <td>{{ e }}</td>
+             <td>{{ employee.id }}</td>
+             <td>{{ employee.name }}</td>
+             <td>{{ employee.gender }}</td>
+             <td>{{ employee.email }}</td>
+         </tr>
+     </tbody>
+ </table>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>AJAX Demo</h1>
+    <button onclick="onButtonClicked()">Change Content</button>
+    <h1 id="result"></h1>
+    <script>
+
+        function onButtonClicked(){
+            // create xmlHttpRequest object
+            var xhttp = new XMLHttpRequest();
+            
+            // instantiating the request object
+            // open(method_type, url , async)
+            xhttp.open('GET', 'data.txt', true)
+
+            // defining event listener for readyStateChange event
+            xhttp.onreadystatechange = function(){
+                // check if the request is completed and was successfull
+                if(this.readyState ==4 && this.status == 200){
+                    // inserrting the response from server into the html element
+                    document.getElementById('result').innerHTML = this.responseText;
+                }
+            }
+            // sending the request to the server
+            xhttp.send()
+
+        }
+
+
+    </script>
+    
+</body>
+</html>

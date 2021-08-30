@@ -1,0 +1,22 @@
+<h1>Employee List</h1>
+
+<table class="table table-bordered">
+    <thead class="thead-dark">
+        <tr>
+            <th>Code</th>
+            <th>Name</th>
+            <th>Gender</th>
+            <th>Salary</th>
+            <th>Date of Birth</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let employee of employees">
+            <td>{{ employee.code | uppercase }}</td>
+            <td>{{ employee.name | title : employee.gender }}</td>
+            <td>{{ employee.gender }}</td>
+            <td>{{ employee.salary | currency : 'GBP' }}</td>
+            <td>{{ employee.dateOfBirth | date: 'medium' }}</td>
+        </tr>
+    </tbody>
+</table>

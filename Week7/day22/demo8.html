@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 style="color: red;" id="result1"></h1>
+    <h1 style="color: green" id="result2"></h1>
+
+    <script>
+        function print1(data){
+            document.getElementById('result1').innerHTML = data;
+        }
+
+        function print2(data){
+            document.getElementById('result2').innerHTML = data;
+        }
+
+        function hello(name, mycb){
+            let message = 'Hello ' + name;
+           mycb(message)           
+        }
+
+        hello('Mark', print2)
+
+
+    </script>
+
+</body>
+</html>

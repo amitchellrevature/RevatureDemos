@@ -1,0 +1,12 @@
+<h1>Structural Directives - ngIf</h1>
+
+<!-- <h1 *ngIf="false">Hello World</h1>
+
+<h1 [class.d-none]="true">Hello from class binding</h1>
+<h1 *ngIf="false">Hello from If</h1> -->
+
+<h1 *ngIf="display">If</h1>
+<h1 *ngIf="!display">Else</h1>
+
+<button *ngIf="!isLoggedIn" class="btn btn-primary">Login</button>
+<button *ngIf="isLoggedIn" class="btn btn-danger">Logout</button>
