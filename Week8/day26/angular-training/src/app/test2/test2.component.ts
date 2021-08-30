@@ -9,11 +9,8 @@ export class Test2Component implements OnChanges {
 
   @Input()
   childData = '';
-
-
-
+  
   ngOnChanges(): void{
-    this.childData =  this.childData;
 
   }
   
